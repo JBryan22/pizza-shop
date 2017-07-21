@@ -95,7 +95,7 @@ $(function(){
 
       total += newPizza.getPrice();
 
-      $(".details").click(function(){
+      $(".details").last().click(function(){
         $(".side-form-pizza-size").text(newPizza.size);
         $(".side-form-pizza-toppings").text(newPizza.toppings.length === 0 && newPizza.premium.length === 0 ? 'Only Cheese' : newPizza.toppings + " " + newPizza.premium);
         $(".side-form-details").show();

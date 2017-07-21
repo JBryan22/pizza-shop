@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Gloria+Hallelujah" rel="stylesheet">
@@ -15,23 +16,27 @@
   <body>
     <div class="container">
       <header>
-        <h1>Jesse's Famous Pizza</h1>
+        <h1>Jesse's Famous Wood Fired Pizza</h1>
       </header>
+
       <main>
-        <h2>Order Form</h2>
 
-        <div class="side-total">
-          <h3>Pizzas:</h3>
-          <ul>
+        <section class="side-bar">
+          <div class="side-total">
+            <h3>Pizzas:</h3>
+            <ul>
 
-          </ul>
-          <div class="side-form-details">
-            <p class="side-form-pizza-size"></p>
-            <p class="side-form-pizza-toppings"></p>
+            </ul>
+            <div class="side-form-details">
+              <p class="side-form-pizza-size"></p>
+              <p class="side-form-pizza-toppings"></p>
+            </div>
+            <p>Total: $<span class="total">0</span></p>
+            <button type="click" class="purchase btn btn-success">Purchase Now</button>
           </div>
-          <p>Total: $<span class="total">0</span></p>
-          <button type="click" class="purchase btn btn-success">Purchase Now</button>
-        </div>
+        </section>
+
+        <h2>Order Form</h2>
 
         <form id="order-form">
           <div class="radio">
@@ -59,7 +64,7 @@
             </label>
           </div>
 
-          <div class="form-group">
+          <div class="form-group toppings">
             <label>Select Your Toppings - $0.75 per normal topping, $1.50 per premium topping </label><br>
             <input type="checkbox" name="toppings" value="Pepperoni"> Pepperoni<br>
             <input type="checkbox" name="toppings" value="Bacon"> Bacon<br>
@@ -75,7 +80,8 @@
             <input type="checkbox" name="toppings" value="Spinach"> Spinach<br>
           </div>
 
-          <div class="form-group">
+          <div class="form-group premium">
+            <label>Premium Toppings:</label><br>
             <input type="checkbox" name="premium-toppings" value="Anchovies"> Anchovies<br>
             <input type="checkbox" name="premium-toppings" value="Steak"> Steak<br>
             <input type="checkbox" name="premium-toppings" value="Goat"> Goat Cheese<br>
