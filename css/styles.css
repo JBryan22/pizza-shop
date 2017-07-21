@@ -13,7 +13,6 @@ header {
     url('../img/banner.jpg');
     background-position: center;
     background-size: cover;
-    border-radius: 10px;
 }
 
 h1 {
@@ -27,10 +26,10 @@ h2 {
 }
 
 main {
+  color: rgb(102,102,102);
+  background-color: rgba(221, 221, 221, 0.95);
   padding-left: 0.5em;
   padding-bottom: 1em;
-  border-radius: 10px;
-  background-color: beige;
   position:relative;
   font-size: 1.3em;
 }
@@ -43,8 +42,15 @@ ul {
 .container {
   background-color: white;
   margin-top: 2em;
-  border-radius: 10px;
+  background-image: url("../img/rustic.jpg");
+  background-position: center;
+  background-size: cover;
 }
+
+.col-md-7 {
+
+}
+
 
 .side-bar {
   background-color: white;
