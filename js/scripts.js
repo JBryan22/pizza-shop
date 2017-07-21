@@ -11,13 +11,13 @@ Pizza.prototype.getPrice = function(){
 
   switch(this.size) {
     case "medium":
-      total+= 2.5;
+      total+= 2;
       break;
     case "large":
-      total+= 5;
+      total+= 4;
       break;
     case "xlarge":
-      total+= 7.5;
+      total+= 6;
       break;
   }
 
@@ -47,10 +47,21 @@ $(function(){
     $("input:checkbox[name=premium-toppings]:checked").each(function(){
       premiumToppings.push($(this).val());
     });
+    var multiplier = $("#multi").val();
+    var pizzaArray;
+    if (multiplier > 1) {
+      pizzaArray = [];
+      for (var i = 0; i < multiplier; i++) {
+        pizzaArray[i] = new Pizza(size, toppings, premiumToppings);
+      }
+    } else {
+      var newPizza = new Pizza(size, toppings, premiumToppings);
+    }
 
 
-    var newPizza = new Pizza(size, toppings, premiumToppings);
-    console.log(newPizza);
-    console.log(newPizza.getPrice());
+    // console.log(newPizza);
+    // console.log(newPizza.getPrice());
+    console.log(pizzaArray);
+    console.log(pizzaArray[0].getPrice());
   });
 });
