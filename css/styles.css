@@ -6,7 +6,6 @@ body {
 header {
   text-align: center;
   color:rgba(255, 255, 255, 0.85);
-  height: 10em;
   background-image:linear-gradient(
     rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0.3)
@@ -18,7 +17,7 @@ header {
 }
 
 h1 {
-  padding-top: 1.5em;
+  padding: 4em;
   letter-spacing: 0.2em;
 }
 
@@ -28,10 +27,17 @@ h2 {
 }
 
 main {
+  padding-left: 0.5em;
+  padding-bottom: 1em;
   border-radius: 10px;
   background-color: beige;
   position:relative;
-  width:65%;
+  font-size: 1.3em;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: -3em;
 }
 
 .container {
@@ -41,13 +47,47 @@ main {
 }
 
 .side-bar {
-  top: 2em;
-  right: 20px;
-  left: 120%;
-
-  position:absolute;
+  background-color: white;
+  border: 1px solid black;
+  border-radius:10px;
+  width:65%;
+  margin-top: 20%;
+  margin-left: 5%;
+  text-align: center;
+  padding-bottom: 1em;
 }
 
 .side-form-details {
+  display: none;
+}
+
+.details {
+  color:#3165b7;
+}
+
+.details:hover {
+  text-decoration: underline;
+  cursor:pointer;
+}
+
+.remove {
+  color:red;
+  font-size:0.8em;
+}
+
+.remove:hover {
+  text-decoration: underline;
+  cursor:pointer;
+}
+
+.details {
+  font-size: 1.5em;
+}
+
+#addToCart {
+  margin-top: 0.6em;
+}
+
+.purchase {
   display: none;
 }

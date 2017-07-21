@@ -15,90 +15,99 @@
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1>Jesse's Famous Wood Fired Pizza</h1>
-      </header>
+      <div class="row">
+        <div class="col-md-12">
+          <header>
+            <h1>Jesse's Famous Wood Fired Pizza</h1>
+          </header>
+        </div>
+      </div>
 
       <main>
+        <div class="row">
+          <div class="col-md-7">
 
-        <section class="side-bar">
-          <div class="side-total">
-            <h3>Pizzas:</h3>
-            <ul>
+            <h2>Order Form</h2>
 
-            </ul>
-            <div class="side-form-details">
-              <p class="side-form-pizza-size"></p>
-              <p class="side-form-pizza-toppings"></p>
+            <form id="order-form">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="size" value="Small" checked>
+                  Small - 10"
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="size" value="Medium">
+                  Medium - 12"
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="size" value="Large">
+                  Large - 14"
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="size" value="XLarge">
+                  Extra Large - 16"
+                </label>
+              </div>
+
+              <div class="form-group toppings">
+                <label>Select Your Toppings - $0.75 per normal topping, $1.50 per premium topping </label><br>
+                <input type="checkbox" name="toppings" value="Pepperoni"> Pepperoni<br>
+                <input type="checkbox" name="toppings" value="Bacon"> Bacon<br>
+                <input type="checkbox" name="toppings" value="Sausage"> Sausage<br>
+                <input type="checkbox" name="toppings" value="Chicken"> Chicken<br>
+                <input type="checkbox" name="toppings" value="Canadian Bacon"> Canadian-Bacon<br>
+                <input type="checkbox" name="toppings" value="Onions"> Onions<br>
+                <input type="checkbox" name="toppings" value="Pineapple"> Pineapple<br>
+                <input type="checkbox" name="toppings" value="Jalapeno"> Jalapeno<br>
+                <input type="checkbox" name="toppings" value="Olive"> Olive<br>
+                <input type="checkbox" name="toppings" value="GreenPepper"> Green Pepper<br>
+                <input type="checkbox" name="toppings" value="Mushroom"> Mushroom<br>
+                <input type="checkbox" name="toppings" value="Spinach"> Spinach<br>
+              </div>
+
+              <div class="form-group premium">
+                <label>Premium Toppings:</label><br>
+                <input type="checkbox" name="premium-toppings" value="Anchovies"> Anchovies<br>
+                <input type="checkbox" name="premium-toppings" value="Steak"> Steak<br>
+                <input type="checkbox" name="premium-toppings" value="Goat"> Goat Cheese<br>
+                <input type="checkbox" name="premium-toppings" value="Chorizo"> Chorizo Sausage<br>
+              </div>
+
+              <div class="multiplier">
+                <label>Enter how many of this type of pizza you would like:</label>
+                <input type="number" id="multi" value="1">
+              </div>
+
+              <button type="submit" id="addToCart" class="btn btn-info">Add To Cart</button>
+
+            </form>
+
+          </div>
+
+            <div class="col-md-5">
+              <section class="side-bar">
+                <div class="side-total">
+                  <h3>Pizzas:</h3>
+                  <ul>
+
+                  </ul>
+                  <div class="side-form-details">
+                    <p class="side-form-pizza-size"></p>
+                    <p class="side-form-pizza-toppings"></p>
+                  </div>
+                  <p>Total: $<span class="total">0</span></p>
+                  <button type="click" class="purchase btn btn-success">Purchase Now</button>
+                </div>
+              </section>
             </div>
-            <p>Total: $<span class="total">0</span></p>
-            <button type="click" class="purchase btn btn-success">Purchase Now</button>
-          </div>
-        </section>
 
-        <h2>Order Form</h2>
-
-        <form id="order-form">
-          <div class="radio">
-            <label>
-              <input type="radio" name="size" value="small" checked>
-              Small - 10"
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="size" value="medium">
-              Medium - 12"
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="size" value="large">
-              Large - 14"
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="size" value="xlarge">
-              Extra Large - 16"
-            </label>
-          </div>
-
-          <div class="form-group toppings">
-            <label>Select Your Toppings - $0.75 per normal topping, $1.50 per premium topping </label><br>
-            <input type="checkbox" name="toppings" value="Pepperoni"> Pepperoni<br>
-            <input type="checkbox" name="toppings" value="Bacon"> Bacon<br>
-            <input type="checkbox" name="toppings" value="Sausage"> Sausage<br>
-            <input type="checkbox" name="toppings" value="Chicken"> Chicken<br>
-            <input type="checkbox" name="toppings" value="Canadian Bacon"> Canadian-Bacon<br>
-            <input type="checkbox" name="toppings" value="Onions"> Onions<br>
-            <input type="checkbox" name="toppings" value="Pineapple"> Pineapple<br>
-            <input type="checkbox" name="toppings" value="Jalapeno"> Jalapeno<br>
-            <input type="checkbox" name="toppings" value="Olive"> Olive<br>
-            <input type="checkbox" name="toppings" value="GreenPepper"> Green Pepper<br>
-            <input type="checkbox" name="toppings" value="Mushroom"> Mushroom<br>
-            <input type="checkbox" name="toppings" value="Spinach"> Spinach<br>
-          </div>
-
-          <div class="form-group premium">
-            <label>Premium Toppings:</label><br>
-            <input type="checkbox" name="premium-toppings" value="Anchovies"> Anchovies<br>
-            <input type="checkbox" name="premium-toppings" value="Steak"> Steak<br>
-            <input type="checkbox" name="premium-toppings" value="Goat"> Goat Cheese<br>
-            <input type="checkbox" name="premium-toppings" value="Chorizo"> Chorizo Sausage<br>
-          </div>
-
-          <div class="multiplier">
-            <label>Enter how many of this type of pizza you would like:</label>
-            <input type="number" id="multi" value="1">
-          </div>
-
-          <button type="submit" id="addToCart">Add To Cart</button>
-
-        </form>
-
-        <button type="click" class="purchase btn btn-success">Purchase Now</button>
-
+        </div>
       </main>
     </div>
   </body>

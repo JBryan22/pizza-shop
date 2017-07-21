@@ -73,7 +73,7 @@ $(function(){
            "' data-premium = '" + pizzaArray[i].premium + "'>" +
            pizzaArray[i].size + " $" + pizzaArray[i].getPrice() +
            "</span> - <span class='remove-multi' data-amount = " + pizzaArray[i].getPrice() +
-           ">Remove From Cart</span></li>");
+           ">Remove</span></li>");
         total += pizzaArray[i].getPrice();
       }
 
@@ -86,12 +86,14 @@ $(function(){
         total -= $(this).data('amount');
         this.parentNode.remove();
         $(".total").text(total);
+        $(".side-form-pizza-size").text('');
+        $(".side-form-pizza-toppings").text('');
       });
     } else {
 
       //creates single pizza object and appends it to total
       var newPizza = new Pizza(size, toppings, premiumToppings);
-      $(".side-total ul").append("<li><span class='details' data-size = '" + newPizza.size + "'>" + newPizza.size + " $" + newPizza.getPrice() + "</span> - <span class='remove' data-amount = '" + newPizza.getPrice() + "' data-premium = '" + newPizza.premium + "'>Remove From Cart</span></li>");
+      $(".side-total ul").append("<li><span class='details' data-size = '" + newPizza.size + "'>" + newPizza.size + " $" + newPizza.getPrice() + "</span> - <span class='remove' data-amount = '" + newPizza.getPrice() + "' data-premium = '" + newPizza.premium + "'>Remove</span></li>");
 
       total += newPizza.getPrice();
 
@@ -106,9 +108,12 @@ $(function(){
         total -= newPizza.getPrice();
         this.parentNode.remove();
         $(".total").text(total);
+        $(".side-form-pizza-size").text('');
+        $(".side-form-pizza-toppings").text('');
       });
     }
 
+    $(".purchase").show();
     $(".total").text(total);
     resetOrderForm();
 
