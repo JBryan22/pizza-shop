@@ -1,4 +1,5 @@
 //BUSINESS LOGIC
+var total = 0;
 
 function Pizza(size, toppings, premium) {
   this.size = size;
@@ -60,15 +61,36 @@ $(function(){
     var multiplier = $("#multi").val();
     var pizzaArray;
     if (multiplier > 1) {
+
+      //creates array of pizza objects and appends them all to the total
       pizzaArray = [];
       for (var i = 0; i < multiplier; i++) {
         pizzaArray[i] = new Pizza(size, toppings, premiumToppings);
-        $(".side-total ul").append("<li>" + pizzaArray[i].size + " $" + pizzaArray[i].getPrice() + "<span class='remove'> - Remove From Cart</span></li>");
+        $(".side-total ul").append("<li>" + pizzaArray[i].size + " $" + pizzaArray[i].getPrice() + "<span class='remove-multi' data-amount = " + pizzaArray[i].getPrice() + "> - Remove From Cart</span></li>");
+        total += pizzaArray[i].getPrice();
       }
+
+      $(".remove-multi").click(function(){
+        total -= $(this).data('amount');
+        this.parentNode.remove();
+        $(".total").text(total);
+      });
     } else {
+
+      //creates single pizza object and appends it to total
       var newPizza = new Pizza(size, toppings, premiumToppings);
-      $(".side-total ul").append("<li>" + newPizza.size + " $" + newPizza.getPrice() + "<span class='remove'> - Remove From Cart</span></li>");
+      $(".side-total ul").append("<li>" + newPizza.size + " $" + newPizza.getPrice() + "<span class='remove' data-amount = " + newPizza.getPrice() + "> - Remove From Cart</span></li>");
+
+      total += newPizza.getPrice();
+
+      $(".remove").last().click(function(){
+        total -= $(this).data('amount');
+        this.parentNode.remove();
+        $(".total").text(total);
+      });
     }
+
+    $(".total").text(total);
     resetOrderForm();
 
     // console.log(newPizza);
