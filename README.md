@@ -28,6 +28,10 @@ output: a new form is brought up
 input: click remove button
 output: pizza is removed from cart, total is updated
 
-8. Allow user to "pay" and show invoice
+8. Allow user to click on a pizza in their cart and show the details
+input: click on pizza
+output: display pizza with toppings
+
+9. Allow user to "pay" and show invoice
 input: click the pay button
 output: invoice is generated and replaces screen
